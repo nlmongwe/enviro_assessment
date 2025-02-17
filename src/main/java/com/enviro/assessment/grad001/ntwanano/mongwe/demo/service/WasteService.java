@@ -46,7 +46,7 @@ public class WasteService {
         if(wasteOptional.isPresent()){
             wasteOptional.map(existingWaste -> {
                 existingWaste.setName(newWaste.getName());
-                existingWaste.setCategoryId(newWaste.getCategoryId());
+                existingWaste.setCategory(newWaste.getCategory());
                 existingWaste.setDisposalMethod(newWaste.getDisposalMethod());
                 existingWaste.setRecyclingTips(newWaste.getRecyclingTips());
                 return wasteRepository.save(existingWaste);
@@ -71,4 +71,6 @@ public class WasteService {
             return new SuccessResponse(wasteOptional);
         }
     }
+
+
 }

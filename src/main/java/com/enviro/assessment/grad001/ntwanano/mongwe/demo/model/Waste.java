@@ -11,21 +11,21 @@ public class Waste {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "waste_seq")
     private Integer id;
     private String name;
-    private int categoryId;
+    private String category;
     private String disposalMethod;
     private String recyclingTips;
 
-    public Waste(String name, int categoryId, String disposalMethod, String recyclingTips, int id) {
+    public Waste(String name, String category, String disposalMethod, String recyclingTips, int id) {
         this.name = name;
-        this.categoryId = categoryId;
+        this.category = category;
         this.disposalMethod = disposalMethod;
         this.recyclingTips = recyclingTips;
         this.id = id;
     }
 
-    public Waste(String name, int categoryId, String disposalMethod, String recyclingTips) {
+    public Waste(String name, String category, String disposalMethod, String recyclingTips) {
         this.name = name;
-        this.categoryId = categoryId;
+        this.category = category;
         this.disposalMethod = disposalMethod;
         this.recyclingTips = recyclingTips;
     }
@@ -45,8 +45,8 @@ public class Waste {
         this.name = name;
     }
 
-    public void setCategoryId(int categoryId) {
-        this.categoryId = categoryId;
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public void setDisposalMethod(String disposalMethod) {
@@ -61,8 +61,8 @@ public class Waste {
         return name;
     }
 
-    public int getCategoryId() {
-        return categoryId;
+    public String getCategory() {
+        return category;
     }
 
     public String getDisposalMethod() {
@@ -78,7 +78,7 @@ public class Waste {
         return "Waste{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", categoryId=" + categoryId +
+                ", categoryId=" + category +
                 ", disposalMethod='" + disposalMethod + '\'' +
                 ", recyclingTips='" + recyclingTips + '\'' +
                 '}';

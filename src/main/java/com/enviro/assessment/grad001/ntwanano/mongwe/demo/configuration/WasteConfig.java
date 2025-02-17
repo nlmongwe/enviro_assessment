@@ -18,13 +18,13 @@ public class WasteConfig {
     @Bean
     CommandLineRunner wasteCommandLineRunner(WasteRepository wasteRepository){
         return args -> {
-            Waste bananaPeel = new Waste("Banana Peel",1,"Compost","Add to compost bin");
-            Waste plasticBottle = new Waste("Plastic Bottle",2,"Recycle","Rinse before recycling");
-            Waste battery = new Waste("Battery",3,"Take to hazardous waste center","Store in cool dry place");
-            //Waste styrofoam = new Waste("Styrofoam",4,"Dispose in trash","Avoid using");
+            Waste bananaPeel = new Waste("Banana Peel","Organic","Compost","Add to compost bin");
+            Waste plasticBottle = new Waste("Plastic Bottle","Recyclables","Recycle","Rinse before recycling");
+            Waste battery = new Waste("Battery","Hazardous","Take to hazardous waste center","Store in cool dry place");
+            Waste styrofoam = new Waste("Styrofoam","General Waste","Dispose in trash","Avoid using");
 
-            //wasteRepository.saveAll(List.of(bananaPeel,plasticBottle,battery,styrofoam));
-            wasteRepository.saveAll(List.of(bananaPeel,plasticBottle,battery));
+            wasteRepository.saveAll(List.of(bananaPeel,plasticBottle,battery,styrofoam));
+            //wasteRepository.saveAll(List.of(bananaPeel,plasticBottle,battery));
         };
     }
 }

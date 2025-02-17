@@ -49,7 +49,6 @@ public class WasteController {
     @PostMapping(path = "/delete/byId")
     public ResponseEntity<SuccessResponse> deleteWasteById(@RequestBody Map<String, Integer> requestBody){
         Integer id = requestBody.get("id");
-        System.out.println("delete id: "+ id);
         SuccessResponse successResponse = wasteService.deleteWasteById(id);
         return ResponseEntity.status(HttpStatus.GONE).body(successResponse);
     }
